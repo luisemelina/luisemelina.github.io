@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<title>Luis & Melina - Nosso casamento</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Theme CSS -->
+	<link href="css/freelancer.min.css" rel="stylesheet">
+	<!-- Custom Fonts -->
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<style>
+		.product-info {
+			min-height: 130px;
+			text-align: center;
+			margin: 8px 0 0;
+		}
+		
+		.portfolio-item {
+			margin-left: 20px !important;
+			margin-right: 20px !important;
+			margin-bottom: 40px !important;
+		}
+
+		.portfolio-link {
+			max-width: none !important;
+		}
+
+		.portfolio-link img {
+			margin: 0 auto;
+		}
+
+		header {
+			background: #2c3e50 url('img/cover-b.jpg') no-repeat center center;
+			background-size: cover;
+
+			text-shadow: -2px 2px 5px #000;
+		}
+
+		.photo {
+			display: block;
+			max-width: 256px;
+			max-height: 256px;
+			border: 3px solid #FFF;
+			border-radius: 50%;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+
+		.qd-first-line {
+			clear: both;
+		}
+	</style>
+</head>
+
+<body id="page-top" class="index">
+	<!-- Header -->
+	<header>
+		<div class="container" id="maincontent" tabindex="-1">
+			<div class="row">
+				<div class="col-xs-12">
+					<span class="photo"> <img class="img-responsive" src="img/perfil.jpg" alt=""> </span>
+					<div class="intro-text">
+						<h1 class="name">Luis & Melina - Vamos casar!</h1>
+						<hr class="star-light">
+						<span class="skills">Dessa vez meu presente é curtir uma viagem! Compre algo abaixo para torná-la mais especial</span> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Portfolio Grid Section -->
+	<section id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h2>Meus desejos</h2>
+					<hr class="star-primary">
+				</div>
+			</div>
+			<div class="row" id="shelf-wrapper">
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="success" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h2>Agradecida!</h2>
+					<hr class="star-light">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<p>Obrigada por contribuir para essa data ser ainda mais especial. Vocé é incrível .</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-top page-scroll hidden-sm hidden-lg hidden-md">
+		<a class="btn btn-primary" href="#page-top">
+			<i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+	<script>
+		$(function () {
+			function setFirstLine() {
+				var curTop;
+				var shelf = $(".portfolio-item-wrapper").removeClass('qd-first-line');
+				shelf.first().addClass("qd-first-line");
+
+				function setFirst() {
+					shelf.each(function () {
+						var $t = $(this);
+
+						if ($t.is(".qd-first-line")) {
+							curTop = $t.offset().top;
+							shelf = shelf.not($t);
+							return;
+						}
+
+						var offsetTop = $t.offset().top;
+						if (offsetTop >= curTop - 10 && offsetTop <= curTop + 10)
+							shelf = shelf.not($t);
+						else {
+							$t.addClass("qd-first-line");
+							return false;
+						}
+					});
+
+					if (shelf.length)
+						setFirst();
+				};
+				setFirst();
+			};
+			setFirstLine();
+			$(window).on('resize', setFirstLine);
+		});
+
+		$(function() {
+			var source   = document.getElementById("shelf-template").innerHTML;
+			var template = Handlebars.compile(source);
+			var context = {products: []};
+
+			context.products.push({
+				link: 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-29ac89eb-cdde-4505-b50c-8f826d55c99f'
+				,img: 'fogao.jpg'
+				,name: 'Fogão'
+				,price: '800,00'
+			});
+
+			context.products.push({
+				link: 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-eb82fd32-8efc-4d7c-84cd-a642ebd6b811'
+				,img: 'lua-de-mel.jpg'
+				,name: 'Lua de Mel'
+				,price: '3.000,00'
+			});
+
+			var html    = template(context);
+			$('#shelf-wrapper').html(html);
+		});
+	</script>
+
+	<script id="shelf-template" type="text/x-handlebars-template">
+		{{#each products}}
+			<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item-wrapper">
+				<div class="portfolio-item">
+					<a href="{{link}}" class="portfolio-link">
+						<div class="caption">
+							<div class="caption-content"> <i class="fa fa-cart-plus fa-4x"></i> </div>
+						</div>
+						<img src="img/{{img}}" class="img-responsive" />
+					</a>
+					<div class="product-info">
+						<p><a href="{{link}}">{{name}}</a> </p>
+						<p>R$ {{price}}</p>
+						<a class="btn btn-success btn-lg" href="{{link}}"><i class="fa fa-shopping-cart"></i> &nbsp; Comprar</a>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</script>
+</body>
+
+</html>
