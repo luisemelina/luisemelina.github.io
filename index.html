@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dessa vez meu presente é curtir uma viagem! Compre algo abaixo para torná-la mais especial">
+	<meta name="description" content="Iremos casar e seu presente será o pedacinho do nosso lar. Nos presenteie com algo abaixo para tornar essa data muito mais especial!">
 
 	<!-- Bootstrap Core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 		}
 
 		header {
-			background: #2c3e50 url('img/cover-b.jpg') no-repeat center center;
+			background: #2c3e50 url('img/cover-b.jpeg') no-repeat center center;
 			background-size: cover;
 
 			text-shadow: -2px 2px 5px #000;
@@ -77,7 +77,7 @@
 					<div class="intro-text">
 						<h1 class="name">Luis & Melina - Vamos casar!</h1>
 						<hr class="star-light">
-						<span class="skills">Dessa vez meu presente é curtir uma viagem! Compre algo abaixo para torná-la mais especial</span> 
+						<span class="skills">Iremos casar e seu presente será o pedacinho do nosso lar. Nos presenteie com algo abaixo para tornar essa data muito mais especial!</span> 
 					</div>
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h2>Meus desejos</h2>
+					<h2>Nossos desejos</h2>
 					<hr class="star-primary">
 				</div>
 			</div>
@@ -103,13 +103,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h2>Agradecida!</h2>
+					<h2>Somos gratos!</h2>
 					<hr class="star-light">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<p>Obrigada por contribuir para essa data ser ainda mais especial. Vocé é incrível .</p>
+					<p>Obrigado por ter feito parte dessa história, voce é especial para nós!</p>
 				</div>
 			</div>
 		</div>
@@ -162,21 +162,33 @@
 		$(function() {
 			var source   = document.getElementById("shelf-template").innerHTML;
 			var template = Handlebars.compile(source);
-			var context = {products: []};
-
-			context.products.push({
-				link: 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-29ac89eb-cdde-4505-b50c-8f826d55c99f'
-				,img: 'fogao.jpg'
-				,name: 'Fogão'
-				,price: '800,00'
-			});
-
-			context.products.push({
-				link: 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-eb82fd32-8efc-4d7c-84cd-a642ebd6b811'
-				,img: 'lua-de-mel.jpg'
-				,name: 'Lua de Mel'
-				,price: '3.000,00'
-			});
+			var context = {products: [
+				{'price': '40,00', 'name': 'JOGO DE COPOS', 'img': 'jogo_de_copos.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-9f90c3e5-a726-4bb5-b6f6-e441cf02147b'},
+				{'price': '50,00', 'name': 'TOALHAS DE BANHO', 'img': 'toalhas_de_banho.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-5675cedb-77ea-4c6d-878e-ce3d189e6a1d'},
+				{'price': '50,00', 'name': 'JOGO DE SOBREMESA', 'img': 'jogo_de_sobremesa.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-719ebb12-f545-4988-aac5-6bbf2ebeb51b'},
+				{'price': '70,00', 'name': 'CORTINA', 'img': 'cortina.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-4c370a2d-d703-4098-8e86-21ed50673469'},
+				{'price': '80,00', 'name': 'SANDUICHEIRA', 'img': 'sanduicheira.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-3198d9ee-9059-4e29-a231-57a4a70ff350'},
+				{'price': '80,00', 'name': 'FERRO DE PASSAR', 'img': 'ferro_de_passar.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-b578fb03-528d-45ac-a32e-540581c5564b'},
+				{'price': '100,00', 'name': 'JOGO DE TALHER', 'img': 'jogo_de_talher.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-8f40c4ab-1d8f-4425-9c69-98e6b4694085'},
+				{'price': '120,00', 'name': 'JOGO DE PRATO', 'img': 'jogo_de_prato.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-2fa45ec9-fe05-42f3-b239-fc567fd8c45c'},
+				{'price': '120,00', 'name': 'LIQUIDIFICADOR', 'img': 'liquidificador.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-f3316f3e-de53-4ee9-9665-ef554c5ac4f2'},
+				{'price': '130,00', 'name': 'MESA DE CENTRO', 'img': 'mesa_de_centro.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-6836062a-cd61-40b1-8224-65ad94de2301'},
+				{'price': '150,00', 'name': 'TAPETE', 'img': 'tapete.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-9051b823-bfa2-4696-aa39-0c87390f3a01'},
+				{'price': '200,00', 'name': 'CAFETEIRA', 'img': 'cafeteira.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-fc244afc-a61f-4a61-84d1-d26054e91bf0'},
+				{'price': '200,00', 'name': 'JOGO DE PANELA', 'img': 'jogo_de_panela.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-5885e6e4-843a-4be5-9bb4-d9837c10e280'},
+				{'price': '300,00', 'name': 'PAINEL DE TV', 'img': 'painel_de_tv.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-886502ff-edf0-4a8f-9100-17c9ef9fed5e'},
+				{'price': '400,00', 'name': 'MICROONDAS', 'img': 'microondas.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-305efafd-0405-4df6-955b-eb5c6b0cb109'},
+				{'price': '500,00', 'name': 'MESA DE JANTAR', 'img': 'mesa_de_jantar.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-615b52d4-7cd5-4de6-af24-ece9e197366f'},
+				{'price': '500,00', 'name': 'SOFÁ', 'img': 'sofa.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-b3377c2a-e30d-4bd4-8459-50f94b58c840'},
+				{'price': '600,00', 'name': 'ARMÁRIO DE COZINHA', 'img': 'armario_de_cozinha.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-3c756000-3378-4cd0-8a67-c1e6ab09d63b'},
+				{'price': '800,00', 'name': 'FOGÃO', 'img': 'fogao.jpg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-29ac89eb-cdde-4505-b50c-8f826d55c99f'},
+				{'price': '850,00', 'name': 'GUARDA ROUPA', 'img': 'guarda_roupa.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-f3ada761-9bf1-43e5-bb69-da0530e16dbc'},
+				{'price': '1.200,00', 'name': 'MÁQUINA DE LAVAR', 'img': 'maquina_de_lavar.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-e495744a-a3d0-46d3-b96a-96be3e55035'},
+				{'price': '2.000,00', 'name': 'GELADEIRA', 'img': 'geladeira.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-f86548a6-0d6c-45fa-94ed-3043b0b44bb0'},
+				{'price': '2.300,00', 'name': 'TV', 'img': 'tv.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-6a7a402b-03b9-43bf-8ef8-d30e5b17fa07'},
+				{'price': '2.500,00', 'name': 'CAMA DE CASAL', 'img': 'cama_de_casal.jpeg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-10e29adc-c6fe-4816-a8e4-4b731b8c4802'},
+				{'price': '3.000,00', 'name': 'Lua de Mel', 'img': 'lua-de-mel.jpg', 'link': 'https://www.mercadopago.com/mlb/checkout/start?pref_id=240581840-eb82fd32-8efc-4d7c-84cd-a642ebd6b811'}
+			]};
 
 			var html    = template(context);
 			$('#shelf-wrapper').html(html);
